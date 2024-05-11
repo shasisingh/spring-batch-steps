@@ -41,9 +41,6 @@ In this project, the `@StepScope` annotation is used on the `flatFileItemReader`
 * https://spring.io/projects/spring-batch[Spring Batch] - The batch processing framework used.
 * https://maven.apache.org/[Maven] - Dependency Management.
 
-== Authors
-
-* *Your Name* - _Initial work_ - https://github.com/YourGitHubUsername[YourGitHubUsername]
 
 == License
 

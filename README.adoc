@@ -48,3 +48,6 @@ In this project, the `@StepScope` annotation is used on the `flatFileItemReader`
 
 This project is licensed under the MIT License - see the link:LICENSE.md[LICENSE.md] file for details.
 
+
+== Inspiration
+https://medium.com/@devalerek/spring-batch-retrieve-data-from-the-csv-file-and-save-it-to-database-h2-75a689b7370e[Spring Batch: Retrieve data from the CSV file and save it to Database (H2)] - Deval Patel

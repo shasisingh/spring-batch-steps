@@ -1,0 +1,56 @@
+= SpringBatch-filepoller
+
+This is a Spring Batch application that reads data from a CSV file and writes it to a database. The data represents employee information, including their ID, first name, last name, email address, phone number, address, and date of joining.
+
+== Getting Started
+
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
+
+=== Prerequisites
+
+What things you need to install the software and how to install them:
+
+* Java 8 or higher
+* Maven
+* Spring Boot
+* SQL database
+
+=== Installing
+
+A step by step series of examples that tell you how to get a development environment running:
+
+. Clone the repository to your local machine.
+. Navigate to the project directory.
+. Run `mvn clean install` to build the project.
+. Run `mvn spring-boot:run` to start the application.
+
+== Running the tests
+
+The tests can be run by executing `mvn test` in the project directory. The tests include an integration test for the batch job, which reads from a CSV file and writes to a database.
+
+== Code Explanation
+
+The `@StepScope` annotation in Spring Batch is used to indicate that a bean should be scoped at the step level. This means that a new instance of the bean will be created each time a step is executed. This is particularly useful when you want to inject job parameters into your beans.
+
+In this project, the `@StepScope` annotation is used on the `flatFileItemReader` bean. This means that a new `FlatFileItemReader` instance will be created for each step execution. The `@Value("#{jobParameters['inputFile']}")` expression inside the method parameters is a SpEL (Spring Expression Language) expression that allows you to inject the 'inputFile' job parameter into the `flatFileItemReader` bean. This wouldn't be possible without the `@StepScope` annotation because job parameters are only available at runtime, and by default, Spring beans are singleton scoped and are created at application startup.
+
+== Built With
+
+* https://www.java.com/[Java] - The programming language used.
+* https://spring.io/projects/spring-boot[Spring Boot] - The framework used.
+* https://spring.io/projects/spring-batch[Spring Batch] - The batch processing framework used.
+* https://maven.apache.org/[Maven] - Dependency Management.
+
+== Authors
+
+* *Your Name* - _Initial work_ - https://github.com/YourGitHubUsername[YourGitHubUsername]
+
+== License
+
+This project is licensed under the MIT License - see the link:LICENSE.md[LICENSE.md] file for details.
+
+== Acknowledgments
+
+* Hat tip to anyone whose code was used.
+* Inspiration.
+* etc.

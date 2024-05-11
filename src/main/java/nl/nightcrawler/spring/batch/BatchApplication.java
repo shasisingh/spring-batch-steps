@@ -9,10 +9,10 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 @SpringBootApplication
 @EnableBatchProcessing
 @EnableScheduling
-public class FolderMonitorApplication {
+public class BatchApplication {
 
     public static void main(String[] args) {
-        new SpringApplicationBuilder(FolderMonitorApplication.class)
+        new SpringApplicationBuilder(BatchApplication.class)
                 .web(WebApplicationType.SERVLET)
                 .run(args)
                 .registerShutdownHook();
